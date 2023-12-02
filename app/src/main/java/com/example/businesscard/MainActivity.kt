@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Mail
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -78,6 +77,7 @@ fun GreetingCenter(fullname: String,
         )
         Text(
             text = fullname,
+            style = MaterialTheme.typography.bodyLarge,
             fontSize = 42.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
@@ -85,6 +85,7 @@ fun GreetingCenter(fullname: String,
         )
         Text(
             text = title,
+            style = MaterialTheme.typography.bodyLarge,
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
             color = Color(0xFF177F50)
@@ -103,53 +104,123 @@ fun GreetingBottom(nomorTelp: String,
         modifier = Modifier
             .padding(bottom = 32.dp)
     ) {
-        Row() {
-            // icon Telepon dari materialdesign
-            Icon(
-                imageVector = Icons.Default.Call,
-                contentDescription = "Call Icon",
-                tint = Color(0xFF177F50),
+        Row(
+            modifier = Modifier
+        ) {
+            Column(
                 modifier = Modifier
                     .padding(end = 8.dp)
-            )
-            Text(
-                text = nomorTelp,
+            ) {
+                // 3 icon disini
+                Icon(
+                    imageVector = Icons.Default.Call,
+                    contentDescription = "Call Icon",
+                    tint = Color(0xFF177F50),
+                    modifier = Modifier
+                        .padding(bottom = 8.dp)
+                )
+                Icon(
+                    imageVector = Icons.Default.Share,
+                    contentDescription = "Share Icon",
+                    tint = Color(0xFF177F50),
+                    modifier = Modifier
+                        .padding(bottom = 8.dp)
+                )
+                Icon(
+                    imageVector = Icons.Default.Mail,
+                    contentDescription = "Mail Icon",
+                    tint = Color(0xFF177F50),
+                    modifier = Modifier
+                        .padding(bottom = 8.dp)
+                )
+
+            }
+            Column(
                 modifier = Modifier
-                    .padding(bottom = 8.dp)
-            )
-        }
-        Row() {
-            // icon Share dari materialdesign
-            Icon(
-                imageVector = Icons.Default.Share,
-                contentDescription = "Share Icon",
-                tint = Color(0xFF177F50),
-                modifier = Modifier
-                    .padding(end = 8.dp)
-            )
-            Text(
-                text = sosmed,
-                modifier = Modifier
-                    .padding(bottom = 8.dp)
-            )
-        }
-        Row() {
-            // icon Mail dari materialdesign
-            Icon(
-                imageVector = Icons.Default.Mail,
-                contentDescription = "Mail Icon",
-                tint = Color(0xFF177F50),
-                modifier = Modifier
-                    .padding(end = 8.dp)
-            )
-            Text(
-                text = email,
-                modifier = Modifier
-                    .padding(bottom = 8.dp)
-            )
+                    //.padding(8.dp)
+            ) {
+                // 3 text disini
+                Text(
+                    text = nomorTelp,
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier
+                        .padding(bottom = 10.dp)
+                )
+                Text(
+                    text = sosmed,
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier
+                        .padding(bottom = 10.dp)
+                )
+                Text(
+                    text = email,
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier
+                        .padding(bottom = 10.dp)
+                )
+            }
         }
     }
 }
+
+//@Composable
+//fun GreetingBottom(nomorTelp: String,
+//                   sosmed: String,
+//                   email: String,
+//                   modifier: Modifier = Modifier) {
+//    Column(
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Bottom,
+//        modifier = Modifier
+//            .padding(bottom = 32.dp)
+//    ) {
+//        Row() {
+//            // icon Telepon dari materialdesign
+//            Icon(
+//                imageVector = Icons.Default.Call,
+//                contentDescription = "Call Icon",
+//                tint = Color(0xFF177F50),
+//                modifier = Modifier
+//                    .padding(end = 8.dp)
+//            )
+//            Text(
+//                text = nomorTelp,
+//                modifier = Modifier
+//                    .padding(bottom = 8.dp)
+//            )
+//        }
+//        Row() {
+//            // icon Share dari materialdesign
+//            Icon(
+//                imageVector = Icons.Default.Share,
+//                contentDescription = "Share Icon",
+//                tint = Color(0xFF177F50),
+//                modifier = Modifier
+//                    .padding(end = 8.dp)
+//            )
+//            Text(
+//                text = sosmed,
+//                modifier = Modifier
+//                    .padding(bottom = 8.dp)
+//            )
+//        }
+//        Row() {
+//            // icon Mail dari materialdesign
+//            Icon(
+//                imageVector = Icons.Default.Mail,
+//                contentDescription = "Mail Icon",
+//                tint = Color(0xFF177F50),
+//                modifier = Modifier
+//                    .padding(end = 8.dp)
+//            )
+//            Text(
+//                text = email,
+//                modifier = Modifier
+//                    .padding(bottom = 8.dp)
+//            )
+//        }
+//    }
+//}
 
 
 @Preview(
