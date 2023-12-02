@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="fullname">Rakai Tambora</string>
+    <string name="title">Android Developer Extraordinarie</string>
+    <string name="nomor_telp">+62 123 9871 12179</string>
+    <string name="sosmed">\@rakai_tambora</string>
+    <string name="email">rakai_tambora@gmail.com</string>
+</resources>
